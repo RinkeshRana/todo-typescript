@@ -1,19 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoItem from "./TodoItem";
 import { Todo } from "@/types/types";
 import TodoModal from "./TodoModal";
 import Button from "./Button";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 function HeaderBody() {
-  const [todoItems, setTodoItems] = useState<Todo[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
 
-  function handleAddTodo(todo: string) {
-    console.log("add todo");
+  const [todoItems, setTodoItems] = useLocalStorage<Todo[]>("todos", []);
 
+  function handleAddTodo(todo: string) {
     if (!todo) return;
-    console.log(todo);
 
     setTodoItems([
       ...todoItems,
@@ -52,7 +51,7 @@ function HeaderBody() {
       )}
 
       {!modalOpen && todoItems.length === 0 && (
-        <div className="text-center  p-10">Add some Todos</div>
+        <div className="text-center  p-10 text-gray-500">Add some new task</div>
       )}
       {!modalOpen &&
         todoItems.map((item, index) => (
