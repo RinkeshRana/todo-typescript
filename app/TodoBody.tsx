@@ -6,13 +6,7 @@ import TodoModal from "./TodoModal";
 import Button from "./Button";
 
 function HeaderBody() {
-  const [todoItems, setTodoItems] = useState<Todo[]>([
-    {
-      name: "ths",
-      isCompleted: true,
-      id: Date.now(),
-    },
-  ]);
+  const [todoItems, setTodoItems] = useState<Todo[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
 
   function handleAddTodo(todo: string) {
