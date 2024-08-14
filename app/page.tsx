@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "./Header";
-import TodoBody from "./TodoBody";
+import dynamic from "next/dynamic";
+const TodoBody = dynamic(() => import("./TodoBody"), { ssr: false });
 
 export default function Home() {
   return (

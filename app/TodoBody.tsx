@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 import { Todo } from "@/types/types";
 import TodoModal from "./TodoModal";
 import Button from "./Button";
-import useLocalStorage from "@/hooks/useLocalStorage";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 function HeaderBody() {
   const [modalOpen, setModalOpen] = useState(false);
