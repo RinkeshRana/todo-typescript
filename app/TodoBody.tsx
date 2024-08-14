@@ -13,7 +13,16 @@ function HeaderBody() {
     console.log("add todo");
 
     if (!todo) return;
-    setTodoItems([]);
+    console.log(todo);
+
+    setTodoItems([
+      ...todoItems,
+      {
+        id: Date.now(),
+        name: todo,
+        isCompleted: false,
+      },
+    ]);
     setModalOpen(!modalOpen);
   }
 

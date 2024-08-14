@@ -12,7 +12,7 @@ function TodoModal({
 }) {
   const [todo, setTodo] = useState<string>("");
   return (
-    <div className="flex flex-col items-center gap-y-3 relative">
+    <div className="flex flex-col items-center gap-y-3 relative p-2">
       <div className="absolute -top-4 right-4">
         <button
           className="bg-cyan-500 rounded-full p-1 text-lg"
@@ -25,7 +25,7 @@ function TodoModal({
       </div>
       <input
         type="text"
-        className="rounded p-2 text-black w-72 mt-6"
+        className="rounded p-2 text-black w-full md:w-72 mt-6"
         onChange={(e) => {
           setTodo(e.target.value);
         }}
