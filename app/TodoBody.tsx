@@ -4,7 +4,6 @@ import TodoItem from "./TodoItem";
 import { Todo } from "@/types/types";
 import TodoModal from "./TodoModal";
 import Button from "./Button";
-import { log } from "console";
 
 function HeaderBody() {
   const [todoItems, setTodoItems] = useState<Todo[]>([
@@ -20,10 +19,7 @@ function HeaderBody() {
     console.log("add todo");
 
     if (!todo) return;
-    setTodoItems([
-      ...todoItems,
-      { name: todo, isCompleted: false, id: Date.now() },
-    ]);
+    setTodoItems([]);
     setModalOpen(!modalOpen);
   }
 
